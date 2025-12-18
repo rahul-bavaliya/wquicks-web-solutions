@@ -30,10 +30,10 @@ export const STRINGS = {
     description1: "Founded in the heart of the Canadian prairies, WQuicks was born from a desire to blend rugged reliability with sophisticated digital craftsmanship. We don't just write code; we build digital legacies that stand up to the harshest market climates.",
     description2: "Our Regina-based team brings a unique perspective to technology—prioritizing clarity over noise, and resilience over trends. We serve local innovators and global enterprises with equal dedication.",
     stats: [
-      { label: "Projects Delivered", value: "150+" },
-      { label: "Canadian Offices", value: "2" },
+      { label: "Projects Delivered", value: "5+" },
+      { label: "Canadian Offices", value: "1" },
       { label: "Client Retention", value: "98%" },
-      { label: "Years of Excellence", value: "8+" }
+      { label: "Years of Excellence", value: "7+" }
     ]
   },
   services: {
@@ -41,35 +41,35 @@ export const STRINGS = {
     title: "Thoughtful Engineering",
     subtitle: "We believe in building software that is as reliable as it is beautiful. From Regina to the world.",
     items: [
-      { 
-        title: 'Bespoke Web Systems', 
-        description: 'High-performance React architectures designed for stability and effortless scalability.', 
-        icon: 'Code' 
+      {
+        title: 'Bespoke Web Systems',
+        description: 'High-performance React architectures designed for stability and effortless scalability.',
+        icon: 'Code'
       },
-      { 
-        title: 'Mobile Craftsmanship', 
-        description: 'Native-feel iOS and Android applications built with React Native for a seamless user journey.', 
-        icon: 'Smartphone' 
+      {
+        title: 'Mobile Craftsmanship',
+        description: 'Native-feel iOS and Android applications built with React Native for a seamless user journey.',
+        icon: 'Smartphone'
       },
-      { 
-        title: 'Strategic Growth', 
-        description: 'Intelligent SEO and analytics that provide clarity and measurable results for your business.', 
-        icon: 'BarChart' 
+      {
+        title: 'Strategic Growth',
+        description: 'Intelligent SEO and analytics that provide clarity and measurable results for your business.',
+        icon: 'BarChart'
       },
-      { 
-        title: 'Cloud Architecture', 
-        description: 'Resilient, high-availability infrastructure on AWS and GCP, managed with care.', 
-        icon: 'Server' 
+      {
+        title: 'Cloud Architecture',
+        description: 'Resilient, high-availability infrastructure on AWS and GCP, managed with care.',
+        icon: 'Server'
       },
-      { 
-        title: 'Interface Design', 
-        description: 'Clean, accessible, and attractive UI/UX design that focuses on clarity and user joy.', 
-        icon: 'Layout' 
+      {
+        title: 'Interface Design',
+        description: 'Clean, accessible, and attractive UI/UX design that focuses on clarity and user joy.',
+        icon: 'Layout'
       },
-      { 
-        title: 'Digital Resilience', 
-        description: 'Rigorous security standards and maintenance to ensure your digital assets are always protected.', 
-        icon: 'Shield' 
+      {
+        title: 'Digital Resilience',
+        description: 'Rigorous security standards and maintenance to ensure your digital assets are always protected.',
+        icon: 'Shield'
       }
     ]
   },
@@ -104,33 +104,33 @@ export const STRINGS = {
     titleHighlight: "Global Impact",
     subtitle: "A selection of our most successful collaborations and digital transformations.",
     items: [
-      { 
-        id: 1, 
-        title: 'Lenovo Partner Portal', 
-        category: 'Enterprise Web', 
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lenovo_logo_2015.svg/1024px-Lenovo_logo_2015.svg.png', 
-        isLogo: true 
+      {
+        id: 1,
+        title: 'Lenovo Partner Portal',
+        category: 'Enterprise Web',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Lenovo_logo_2015.svg/1024px-Lenovo_logo_2015.svg.png',
+        isLogo: true
       },
-      { 
-        id: 2, 
-        title: 'ICICI Bank Credit Flows', 
-        category: 'FinTech Architecture', 
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/12/ICICI_Bank_Logo.svg', 
-        isLogo: true 
+      {
+        id: 2,
+        title: 'ICICI Bank Credit Flows',
+        category: 'FinTech Architecture',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/1/12/ICICI_Bank_Logo.svg',
+        isLogo: true
       },
-      { 
-        id: 3, 
-        title: 'Media Utility App', 
-        category: 'SaaS Platform', 
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1024px-Instagram_logo_2016.svg.png', 
-        isLogo: true 
+      {
+        id: 3,
+        title: 'Media Utility App',
+        category: 'SaaS Platform',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/1024px-Instagram_logo_2016.svg.png',
+        isLogo: true
       },
-      { 
-        id: 4, 
-        title: 'Ecommerce Ecosystems', 
-        category: 'Scalable Commerce', 
-        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Pfizer_logo.svg', 
-        isLogo: true 
+      {
+        id: 4,
+        title: 'Ecommerce Ecosystems',
+        category: 'Scalable Commerce',
+        imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Pfizer_logo.svg',
+        isLogo: true
       }
     ]
   },
@@ -223,7 +223,7 @@ export const STRINGS = {
       contact: "Reach Us",
       social: "Follow",
     },
-    copyright: "Wquicks Web Solutions. Built with pride in Regina, SK.",
+    copyright: "© 2025 WQuicks Web Solutions. Built with pride in Saskatchewan, Canada.",
     aria: {
       github: "GitHub",
       linkedin: "LinkedIn",
