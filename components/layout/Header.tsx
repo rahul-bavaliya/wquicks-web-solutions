@@ -79,7 +79,7 @@ export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
                  onClick={(e) => handleNavClick(e, '#contact')}
                  className="px-6 py-3 bg-brand-primary text-white text-xs font-black uppercase tracking-widest rounded-xl hover:bg-brand-secondary transition-all shadow-xl shadow-brand-primary/20 hover:-translate-y-0.5"
                >
-                 Inquiry-UAT
+                 Inquiry
                </a>
             </div>
           </div>
