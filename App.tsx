@@ -50,7 +50,7 @@ function App() {
         <Process theme={theme} />
         <Portfolio theme={theme} />
         {/* Included the Testimonials component here */}
-        <Testimonials theme={theme} />
+        {/* <Testimonials theme={theme} /> */}
         <FAQ theme={theme} />
         <Contact theme={theme} />
       </main>
