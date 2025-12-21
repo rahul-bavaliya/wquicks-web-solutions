@@ -1,0 +1,17 @@
+{
+    "name": "wquicks-backend",
+    "version": "0.0.0",
+    "scripts": {
+        "dev": "wrangler dev",
+        "deploy": "npm run db:deploy && wrangler deploy",
+        "db:init": "wrangler d1 execute wquicks-db --local --file=./schema.sql",
+        "db:deploy": "wrangler d1 execute wquicks-db --file=./schema.sql"
+    },
+    "dependencies": {
+        "hono": "^4.6.14"
+    },
+    "devDependencies": {
+        "@cloudflare/workers-types": "^4.20241218.0",
+        "wrangler": "^4.56.0"
+    }
+}
