@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && wrangler pages deploy dist"
+    "deploy": "npm run build && wrangler pages deploy dist --project-name wquicks-frontend",
+    "deploy:dev": "npm run build && wrangler pages deploy dist --project-name dev-wquicks-frontend",
+    "deploy:uat": "npm run build && wrangler pages deploy dist --project-name uat-wquicks-frontend",
+    "deploy:prod": "npm run build && wrangler pages deploy dist --project-name prod-wquicks-frontend"
   },
   "dependencies": {
     "lucide-react": "^0.561.0",

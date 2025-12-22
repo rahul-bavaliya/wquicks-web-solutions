@@ -3,9 +3,14 @@
     "version": "0.0.0",
     "scripts": {
         "dev": "wrangler dev",
-        "deploy": "npm run db:deploy && wrangler deploy",
-        "db:init": "wrangler d1 execute wquicks-db --local --file=./schema.sql",
-        "db:deploy": "wrangler d1 execute wquicks-db --remote --file=./schema.sql"
+        "deploy": "npm run db:deploy:dev && wrangler deploy --env dev",
+        "deploy:dev": "npm run db:deploy:dev && wrangler deploy --env dev",
+        "deploy:uat": "npm run db:deploy:uat && wrangler deploy --env uat",
+        "deploy:prod": "npm run db:deploy:prod && wrangler deploy --env prod",
+        "db:init": "wrangler d1 execute wquicks-db-dev --local --file=./schema.sql",
+        "db:deploy:dev": "wrangler d1 execute wquicks-db-dev --remote --file=./schema.sql",
+        "db:deploy:uat": "wrangler d1 execute wquicks-db-uat --remote --file=./schema.sql",
+        "db:deploy:prod": "wrangler d1 execute wquicks-db-prod --remote --file=./schema.sql"
     },
     "dependencies": {
         "hono": "^4.6.14"
