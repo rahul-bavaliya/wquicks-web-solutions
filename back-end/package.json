@@ -3,7 +3,7 @@
     "version": "0.0.0",
     "scripts": {
         "dev": "wrangler dev",
-        "deploy": "npm run db:deploy:prod && wrangler deploy --env prod",
+        "deploy": "npm run db:deploy:dev && wrangler deploy --env dev",
         "deploy:dev": "npm run db:deploy:dev && wrangler deploy --env dev",
         "deploy:uat": "npm run db:deploy:uat && wrangler deploy --env uat",
         "deploy:prod": "npm run db:deploy:prod && wrangler deploy --env prod",
