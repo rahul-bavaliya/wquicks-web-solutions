@@ -1,17 +1,23 @@
 # WQuicks Deployment Guide
 
-This guide provides instructions for deploying both the **Back-End** (Cloudflare Workers + D1) and **Front-End** (Cloudflare Pages) of the Web Quick Solutions project.
+This guide provides instructions for deploying both the **Back-End** (Cloudflare Workers + D1) and **Front-End** (Cloudflare Pages) for different environments: **Dev**, **UAT**, and **Prod**.
 
 ## Prerequisites
 
 - **Cloudflare Account**: You must have a Cloudflare account.
-- **Wrangler CLI**: The project uses `wrangler` for deployment. You will likely be asked to login via the browser the first time you run a deploy command.
+- **Wrangler CLI**: The project uses `wrangler` for deployment. You will likely be asked to login via browser: `npx wrangler login`.
+- **Custom Domains**: Ensure `wquicks.com` is managed by Cloudflare or you have permissions to add DNS records.
 
 ---
 
-## 1. Back-End Deployment
+## 1. Back-End Deployment (Workers)
 
-The backend is built on Cloudflare Workers and Hono, and uses a D1 database for storage.
+The backend uses environment-specific custom domains and separate D1 databases.
+
+### Custom Domains:
+- **Dev**: `https://api.dev.wquicks.com`
+- **UAT**: `https://api.uat.wquicks.com`
+- **Prod**: `https://api.wquicks.com`
 
 ### Steps:
 
@@ -20,26 +26,29 @@ The backend is built on Cloudflare Workers and Hono, and uses a D1 database for 
     cd back-end
     ```
 
-2.  **Login to Cloudflare (if not already logged in):**
+2.  **Deploy to specific environment:**
     ```bash
-    npx wrangler login
-    ```
+    # For Dev
+    npm run deploy:dev
 
-3.  **Deploy the Worker & Database:**
-    We have configured a single command that updates your D1 database schema (if changed) and then deploys your worker code.
-    ```bash
-    npm run deploy
-    ```
-    *This runs `npm run db:deploy && wrangler deploy`.*
+    # For UAT
+    npm run deploy:uat
 
-4.  **Note the Worker URL:**
-    After deployment successfully completes, Wrangler will output your Worker's URL (e.g., `https://wquicks-backend.your-subdomain.workers.dev`). **Copy this URL**, you will need it for the frontend configuration.
+    # For Prod
+    npm run deploy:prod
+    ```
+    *These commands automatically run the corresponding database migrations and then deploy the worker code.*
 
 ---
 
-## 2. Front-End Deployment
+## 2. Front-End Deployment (Pages)
 
-The frontend is a static React site that will be deployed to Cloudflare Pages.
+The frontend is deployed to Cloudflare Pages as separate projects.
+
+### Static URLs (Examples):
+- **Dev**: `https://dev-wquicks-frontend.pages.dev`
+- **UAT**: `https://uat-wquicks-frontend.pages.dev`
+- **Prod**: `https://prod-wquicks-frontend.pages.dev`
 
 ### Steps:
 
@@ -48,46 +57,37 @@ The frontend is a static React site that will be deployed to Cloudflare Pages.
     cd front-end
     ```
 
-2.  **Configure the Backend URL:**
-    When deploying, you need to tell the frontend where to send contact form submissions.
-    
-    You have two options:
-    
-    *   **Option A: Cloudflare Dashboard (Recommended)**
-        1.  Deploy first without the variable (see step 3).
-        2.  Go to the Cloudflare Pages dashboard for your new project.
-        3.  Navigate to **Settings** > **Environment variables**.
-        4.  Add a variable: `VITE_API_URL` with the value of your Backend Worker URL (from Section 1, Step 4).
-        5.  Redeploy (or retry the build).
-        
-    *   **Option B: Temporary Local Build**
-        If you want to quick-deploy with the variable baked in:
-        ```bash
-        VITE_API_URL=https://your-backend-url.workers.dev npm run deploy
-        ```
-
-3.  **Deploy the Site:**
-    We have added a script that builds your React app and uploads the `dist` folder to Cloudflare Pages.
-    
+2.  **Deploy to specific environment:**
     ```bash
-    npm run deploy
+    # For Dev
+    VITE_API_URL=https://api.dev.wquicks.com npm run deploy:dev
+
+    # For UAT
+    VITE_API_URL=https://api.uat.wquicks.com npm run deploy:uat
+
+    # For Prod
+    VITE_API_URL=https://api.wquicks.com npm run deploy:prod
     ```
-    
-    *   If this is your first time, Wrangler will ask you to create a new Cloudflare Pages project. Give it a name like `wquicks-frontend`.
-    *   It will upload the assets and provide you with a live URL (e.g., `https://wquicks-frontend.pages.dev`).
+
+3.  **Note**: After the first deployment, it is highly recommended to set the `VITE_API_URL` environment variable within the **Cloudflare Pages Dashboard** for each project under **Settings > Environment variables** so you don't have to specify it in the command line every time.
 
 ---
 
-## Summary of Commands
+## Summary of Environments
 
-**Back-End:**
-```bash
-cd back-end
-npm run deploy
-```
+| Environment | Backend Project Name | Backend API Domain | Frontend Project Name |
+| :--- | :--- | :--- | :--- |
+| **Dev** | `dev-wquicks-backend` | `api.dev.wquicks.com` | `dev-wquicks-frontend` |
+| **UAT** | `uat-wquicks-backend` | `api.uat.wquicks.com` | `uat-wquicks-frontend` |
+| **Prod** | `prod-wquicks-backend` | `api.wquicks.com` | `prod-wquicks-frontend` |
 
-**Front-End:**
-```bash
-cd front-end
-npm run deploy
-```
+---
+
+## Managing Databases
+
+To execute SQL schema changes manually:
+- **Dev**: `npm run db:deploy:dev`
+- **UAT**: `npm run db:deploy:uat`
+- **Prod**: `npm run db:deploy:prod`
+- **Local**: `npm run db:init`
+
