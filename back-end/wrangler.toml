@@ -4,6 +4,9 @@ compatibility_date = "2024-12-18"
 
 [env.dev]
 name = "dev-wquicks-backend"
+routes = [
+  { pattern = "api.dev.wquicks.com", custom_domain = true }
+]
 
 [[env.dev.d1_databases]]
 binding = "DB"
@@ -12,6 +15,9 @@ database_id = "51ec630b-db65-447d-a6a4-639f1bbf0a9d"
 
 [env.uat]
 name = "uat-wquicks-backend"
+routes = [
+  { pattern = "api.uat.wquicks.com", custom_domain = true }
+]
 
 [[env.uat.d1_databases]]
 binding = "DB"
@@ -20,6 +26,9 @@ database_id = "c49cc8b3-3195-4aaa-8ca3-6b17a2fd14b7"
 
 [env.prod]
 name = "prod-wquicks-backend"
+routes = [
+  { pattern = "api.wquicks.com", custom_domain = true }
+]
 
 [[env.prod.d1_databases]]
 binding = "DB"
