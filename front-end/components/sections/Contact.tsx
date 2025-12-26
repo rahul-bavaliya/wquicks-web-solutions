@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { Theme } from '../../types';
 import { Mail, Phone, MapPin, Loader2, CheckCircle, ArrowLeft, ExternalLink, AlertCircle } from 'lucide-react';
-import { ScrollReveal } from '../ui/ScrollReveal';
 import { STRINGS } from '../../utils/strings';
 import { API_ENDPOINTS } from '../../utils/api';
+import { ScrollReveal } from '../ui/ScrollReveal';
 
 interface ContactProps {
   theme: Theme;

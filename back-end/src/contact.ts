@@ -1,6 +1,6 @@
 import { Hono } from 'hono'
 
-const contact = new Hono()
+const contact = new Hono<{ Bindings: { DB: D1Database } }>()
 
 contact.post('/', async (c) => {
     try {

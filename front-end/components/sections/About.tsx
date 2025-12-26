@@ -1,7 +1,7 @@
 import React from 'react';
 import { Theme } from '../../types';
-import { ScrollReveal } from '../ui/ScrollReveal';
 import { STRINGS } from '../../utils/strings';
+import { ScrollReveal } from '../ui/ScrollReveal';
 
 interface AboutProps {
   theme: Theme;
@@ -18,9 +18,9 @@ export const About: React.FC<AboutProps> = ({ theme }) => {
               <div className="relative">
                 <div className={`absolute -inset-4 rounded-[4rem] blur-2xl opacity-20 bg-brand-primary`}></div>
                 <div className={`relative rounded-[3rem] overflow-hidden border ${isDark ? 'border-slate-800' : 'border-slate-100'}`}>
-                  <img 
-                    src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1200" 
-                    alt="Team collaborating in a professional and modern Canadian office environment" 
+                  <img
+                    src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1200"
+                    alt="Team collaborating in a professional and modern Canadian office environment"
                     className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-1000"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-primary/40 to-transparent pointer-events-none"></div>
