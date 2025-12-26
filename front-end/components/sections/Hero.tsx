@@ -20,7 +20,7 @@ export const Hero: React.FC<HeroProps> = ({ theme }) => {
   const isDark = theme === 'dark';
 
   return (
-    <section className={`relative overflow-hidden pt-28 pb-32 lg:pt-48 lg:pb-56 ${isDark ? 'bg-slate-950' : 'bg-white'}`}>
+    <section className={`relative overflow-hidden pt-24 pb-20 lg:pt-32 lg:pb-24 ${isDark ? 'bg-slate-950' : 'bg-white'}`}>
       {/* Decorative Background - Calm & Atmospheric */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft Blobs */}
