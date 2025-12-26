@@ -10,11 +10,11 @@ export const Logo: React.FC<LogoProps> = ({ className = "h-12 w-12", theme = 'li
     const isDark = theme === 'dark';
 
     return (
-        <div className={`relative flex items-center justify-center group ${className}`}>
+        <div className={`relative flex items-center justify-center ${className}`}>
             {/* Smart Theme-Aware Background Glow */}
-            <div className={`absolute inset-0 blur-2xl rounded-full scale-110 transition-all duration-700 opacity-30 group-hover:opacity-60 ${isDark
-                    ? 'bg-gradient-to-tr from-brand-primary via-blue-500 to-brand-secondary'
-                    : 'bg-gradient-to-tr from-brand-primary/40 via-blue-400/30 to-brand-secondary/40'
+            <div className={`absolute inset-0 blur-2xl rounded-full scale-110 transition-all duration-700 opacity-30 ${isDark
+                ? 'bg-gradient-to-tr from-brand-primary via-blue-500 to-brand-secondary'
+                : 'bg-gradient-to-tr from-brand-primary/40 via-blue-400/30 to-brand-secondary/40'
                 }`}></div>
 
             <svg
@@ -24,18 +24,18 @@ export const Logo: React.FC<LogoProps> = ({ className = "h-12 w-12", theme = 'li
                 className="w-full h-full relative z-10 filter drop-shadow-2xl"
             >
                 <defs>
-                    {/* HD Gradient for Dark Mode (Brighter, more vibrant) */}
+                    {/* HD Gradient for Dark Mode */}
                     <linearGradient id="hdGradientDark" x1="10" y1="10" x2="110" y2="110">
-                        <stop offset="0%" stopColor="#60a5fa" /> {/* Sky 400 */}
-                        <stop offset="50%" stopColor="#3b82f6" /> {/* Blue 500 */}
-                        <stop offset="100%" stopColor="#a855f7" /> {/* Purple 500 */}
+                        <stop offset="0%" stopColor="#60a5fa" />
+                        <stop offset="50%" stopColor="#3b82f6" />
+                        <stop offset="100%" stopColor="#a855f7" />
                     </linearGradient>
 
-                    {/* HD Gradient for Light Mode (Deeper, more contrast) */}
+                    {/* HD Gradient for Light Mode */}
                     <linearGradient id="hdGradientLight" x1="10" y1="10" x2="110" y2="110">
-                        <stop offset="0%" stopColor="#1d4ed8" /> {/* Blue 700 */}
-                        <stop offset="50%" stopColor="#2563eb" /> {/* Blue 600 */}
-                        <stop offset="100%" stopColor="#7c3aed" /> {/* Violet 600 */}
+                        <stop offset="0%" stopColor="#1d4ed8" />
+                        <stop offset="50%" stopColor="#2563eb" />
+                        <stop offset="100%" stopColor="#7c3aed" />
                     </linearGradient>
 
                     {/* Dynamic Inner Glass Refraction */}
@@ -50,7 +50,7 @@ export const Logo: React.FC<LogoProps> = ({ className = "h-12 w-12", theme = 'li
                     </filter>
                 </defs>
 
-                {/* Outer Orbital Ring - Adaptive opacity */}
+                {/* Outer Orbital Ring (Static) */}
                 <circle
                     cx="60"
                     cy="60"
@@ -59,7 +59,6 @@ export const Logo: React.FC<LogoProps> = ({ className = "h-12 w-12", theme = 'li
                     strokeWidth="0.5"
                     strokeDasharray="12 8"
                     strokeOpacity={isDark ? "0.6" : "0.3"}
-                    className="animate-[spin_15s_linear_infinite]"
                 />
 
                 {/* Main 3D Cylinder / Ring Base (The Q) */}
@@ -71,10 +70,9 @@ export const Logo: React.FC<LogoProps> = ({ className = "h-12 w-12", theme = 'li
                     strokeWidth="8"
                     strokeLinecap="round"
                     filter="url(#logoGlow)"
-                    className="transition-all duration-500"
                 />
 
-                {/* Glossy Overlay for that "Premium Polish" */}
+                {/* Glossy Overlay */}
                 <circle
                     cx="60"
                     cy="60"
@@ -86,14 +84,14 @@ export const Logo: React.FC<LogoProps> = ({ className = "h-12 w-12", theme = 'li
                     className="mix-blend-overlay rotate-[45deg]"
                 />
 
-                {/* Central W Symbol - Stronger contrast in light mode */}
+                {/* Central W Symbol */}
                 <path
                     d="M38 52L48 72L60 56L72 72L82 52"
                     stroke={isDark ? "white" : "#0f172a"}
                     strokeWidth="10"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="drop-shadow-sm transition-colors duration-500"
+                    className="drop-shadow-sm"
                 />
                 <path
                     d="M38 52L48 72L60 56L72 72L82 52"
@@ -101,10 +99,10 @@ export const Logo: React.FC<LogoProps> = ({ className = "h-12 w-12", theme = 'li
                     strokeWidth="7"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="mix-blend-soft-light transition-all duration-500"
+                    className="mix-blend-soft-light"
                 />
 
-                {/* The Q's Power Tail / Acceleration Spike */}
+                {/* The Q's Power Tail */}
                 <path
                     d="M82 82L102 102"
                     stroke={isDark ? "url(#hdGradientDark)" : "url(#hdGradientLight)"}
@@ -122,18 +120,9 @@ export const Logo: React.FC<LogoProps> = ({ className = "h-12 w-12", theme = 'li
                     strokeOpacity={isDark ? "0.5" : "0.8"}
                 />
 
-                {/* Ambient Data Points (Tech details) */}
-                <circle
-                    cx="60" cy="12" r="2.5"
-                    fill={isDark ? "#60a5fa" : "#3b82f6"}
-                    className="animate-pulse shadow-blue-500"
-                />
-                <circle
-                    cx="108" cy="60" r="2.5"
-                    fill={isDark ? "#a855f7" : "#7c3aed"}
-                    style={{ animationDelay: '1s' }}
-                    className="animate-pulse"
-                />
+                {/* Ambient Data Points (Static) */}
+
+
             </svg>
         </div>
     );

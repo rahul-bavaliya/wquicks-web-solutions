@@ -2,6 +2,7 @@ import React from 'react';
 import { Theme } from '../../types';
 import { STRINGS } from '../../utils/strings';
 import { ScrollReveal } from '../ui/ScrollReveal';
+import { Logo } from '../ui/Logo';
 
 interface AboutProps {
   theme: Theme;
@@ -31,7 +32,10 @@ export const About: React.FC<AboutProps> = ({ theme }) => {
 
           <div className="order-1 lg:order-2">
             <ScrollReveal direction="left">
-              <h2 className="text-xs font-black text-brand-primary tracking-[0.5em] uppercase mb-8">{STRINGS.about.badge}</h2>
+              <div className="flex items-center gap-3 mb-8">
+                <Logo theme={theme} className="h-6 w-6" />
+                <h2 className="text-xs font-black text-brand-primary tracking-[0.5em] uppercase">{STRINGS.about.badge}</h2>
+              </div>
               <h3 className={`text-4xl lg:text-6xl font-black tracking-tighter mb-10 ${isDark ? 'text-white' : 'text-slate-900'}`}>
                 {STRINGS.about.title}
               </h3>
