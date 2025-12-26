@@ -11,7 +11,7 @@ interface AboutProps {
 export const About: React.FC<AboutProps> = ({ theme }) => {
   const isDark = theme === 'dark';
   return (
-    <section id="about" className={`py-32 lg:py-48 overflow-hidden ${isDark ? 'bg-slate-950' : 'bg-white'}`}>
+    <section id="about" className={`py-20 lg:py-28 overflow-hidden ${isDark ? 'bg-slate-950' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
           <div className="order-2 lg:order-1">

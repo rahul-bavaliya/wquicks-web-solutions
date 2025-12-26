@@ -15,7 +15,7 @@ export const Services: React.FC<ServicesProps> = ({ theme }) => {
   const isDark = theme === 'dark';
 
   return (
-    <section id="services" className={`relative py-32 sm:py-48 scroll-mt-20 overflow-hidden ${isDark ? 'bg-slate-900' : 'bg-slate-50'}`}>
+    <section id="services" className={`relative py-20 sm:py-28 scroll-mt-20 overflow-hidden ${isDark ? 'bg-slate-900' : 'bg-slate-50'}`}>
       {/* Background Refinements */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <div className={`absolute inset-0 opacity-[0.04] ${isDark ? 'invert' : ''}`}>
@@ -33,7 +33,7 @@ export const Services: React.FC<ServicesProps> = ({ theme }) => {
 
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10 relative z-10">
         <ScrollReveal direction="up">
-          <div className="text-center max-w-3xl mx-auto mb-32">
+          <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="flex items-center justify-center gap-3 mb-8">
               <Logo theme={theme} className="h-6 w-6" />
               <h2 className="text-xs font-black text-brand-primary tracking-[0.5em] uppercase">{STRINGS.services.badge}</h2>
@@ -53,8 +53,8 @@ export const Services: React.FC<ServicesProps> = ({ theme }) => {
             return (
               <ScrollReveal key={service.title} delay={index * 100} direction="up" className="h-full">
                 <div className={`group relative h-full p-12 rounded-[3rem] border transition-all duration-700 hover:-translate-y-3 hover:shadow-[0_45px_80px_-20px_rgba(0,0,0,0.12)] ${isDark
-                    ? 'bg-slate-950/40 backdrop-blur-2xl border-slate-800 hover:border-brand-primary/40 hover:shadow-brand-primary/10'
-                    : 'bg-white border-slate-100 hover:border-brand-primary/30 hover:shadow-slate-300/60'
+                  ? 'bg-slate-950/40 backdrop-blur-2xl border-slate-800 hover:border-brand-primary/40 hover:shadow-brand-primary/10'
+                  : 'bg-white border-slate-100 hover:border-brand-primary/30 hover:shadow-slate-300/60'
                   }`}>
                   <div className="relative z-10">
                     <div className={`inline-flex items-center justify-center p-6 bg-brand-primary/10 rounded-[1.5rem] mb-12 group-hover:scale-110 group-hover:bg-brand-primary group-hover:text-white transition-all duration-500 text-brand-primary`}>

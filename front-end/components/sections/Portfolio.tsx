@@ -10,7 +10,7 @@ interface PortfolioProps {
 export const Portfolio: React.FC<PortfolioProps> = ({ theme }) => {
   const isDark = theme === 'dark';
   return (
-    <section id="portfolio" className={`py-32 lg:py-48 scroll-mt-20 ${isDark ? 'bg-slate-950' : 'bg-white'}`}>
+    <section id="portfolio" className={`py-20 lg:py-28 scroll-mt-20 ${isDark ? 'bg-slate-950' : 'bg-white'}`}>
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
         <ScrollReveal direction="up">
           <div className="text-center mb-24">
@@ -27,14 +27,13 @@ export const Portfolio: React.FC<PortfolioProps> = ({ theme }) => {
           {STRINGS.portfolio.items.map((project, index) => (
             <ScrollReveal key={project.id} delay={index * 100} direction="up" className="h-full">
               <div className="group relative h-full">
-                <div className={`w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden relative border transition-all duration-500 transform hover:-translate-y-2 ${
-                  isDark ? 'bg-slate-900 border-slate-800' : 'bg-slate-50 border-slate-100'
-                }`}>
-                  <img 
-                    src={project.imageUrl} 
-                    alt={project.title} 
-                    loading="lazy" 
-                    className={`w-full h-full transition-transform duration-700 ease-in-out group-hover:scale-110 ${project.isLogo ? 'object-contain p-12 bg-white' : 'object-cover'}`} 
+                <div className={`w-full aspect-[4/3] rounded-[2.5rem] overflow-hidden relative border transition-all duration-500 transform hover:-translate-y-2 ${isDark ? 'bg-slate-900 border-slate-800' : 'bg-slate-50 border-slate-100'
+                  }`}>
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    loading="lazy"
+                    className={`w-full h-full transition-transform duration-700 ease-in-out group-hover:scale-110 ${project.isLogo ? 'object-contain p-12 bg-white' : 'object-cover'}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <div className="absolute inset-0 flex flex-col justify-end p-8 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
