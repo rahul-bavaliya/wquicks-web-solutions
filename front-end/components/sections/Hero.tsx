@@ -3,6 +3,7 @@ import { Theme } from '../../types';
 import { ArrowRight } from 'lucide-react';
 import { ScrollReveal } from '../ui/ScrollReveal';
 import { DeskIllustration } from '../ui/DeskIllustration';
+import { Logo } from '../ui/Logo';
 import { STRINGS } from '../../utils/strings';
 
 interface HeroProps {
@@ -43,8 +44,8 @@ export const Hero: React.FC<HeroProps> = ({ theme }) => {
 
           <div className="text-left">
             <ScrollReveal delay={100} direction="up">
-              <div className="inline-flex items-center px-5 py-2 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-[10px] font-black tracking-[0.3em] uppercase mb-12">
-                <span className="flex h-1.5 w-1.5 rounded-full bg-brand-secondary mr-3 animate-pulse"></span>
+              <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-brand-primary/20 bg-brand-primary/5 text-brand-primary text-[10px] font-black tracking-[0.3em] uppercase mb-12">
+                <Logo theme={theme} className="h-6 w-6 mr-3" />
                 {STRINGS.hero.badge}
               </div>
             </ScrollReveal>
