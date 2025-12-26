@@ -17,9 +17,9 @@ export const Footer: React.FC<FooterProps> = ({ theme }) => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
 
           <div className="col-span-1 md:col-span-3">
-            <div className="flex items-center group">
-              <Logo className="h-10 w-10 mr-2 transition-transform duration-300 group-hover:scale-110" />
-              <span className={`font-bold text-xl tracking-tight ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+            <div className="flex items-center group mb-6">
+              <Logo theme={theme} className="h-16 w-16 mr-4 transition-transform duration-500 group-hover:scale-110" />
+              <span className={`font-black text-3xl tracking-tighter ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                 {STRINGS.general.brandName}<span className="text-brand-primary transition-colors duration-500">{STRINGS.general.brandNameHighlight}</span>
               </span>
             </div>
