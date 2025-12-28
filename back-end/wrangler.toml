@@ -16,6 +16,10 @@ binding = "DB"
 database_name = "wquicks-db-dev"
 database_id = "51ec630b-db65-447d-a6a4-639f1bbf0a9d"
 
+[[env.dev.r2_buckets]]
+binding = "CONTRACTS"
+bucket_name = "wquicks-contracts-dev"
+
 [env.uat]
 name = "uat-wquicks-backend"
 routes = [
@@ -29,6 +33,10 @@ ALLOWED_ORIGIN = "https://uat.wquicks.com"
 binding = "DB"
 database_name = "wquicks-db-uat"
 database_id = "c49cc8b3-3195-4aaa-8ca3-6b17a2fd14b7"
+
+[[env.uat.r2_buckets]]
+binding = "CONTRACTS"
+bucket_name = "wquicks-contracts-uat"
 
 [env.prod]
 name = "prod-wquicks-backend"
@@ -44,13 +52,26 @@ binding = "DB"
 database_name = "wquicks-db-prod"
 database_id = "602210d8-3ae4-443b-90c7-df569d3f6805"
 
+[[env.prod.r2_buckets]]
+binding = "CONTRACTS"
+bucket_name = "wquicks-contracts-prod"
+
 [dev]
 port = 8787
 
 [vars]
 ALLOWED_ORIGIN = "http://localhost:3000"
+ADMIN_PASSWORD = "wquicks-admin-2025" 
+ADMIN_EMAIL = "rahul.bavaliya.dev@gmail.com"
+RESEND_API_KEY = "re_5MTcc7SQ_Nj4DS4CVBbmaMhyvsBTEawJ9"
 
 [[d1_databases]]
-binding = "DB" # Available in your Worker on env.DB
+binding = "DB"
 database_name = "wquicks-db"
-database_id = "3230c82f-abd9-4968-b928-293c20856af1" # User must replace this
+database_id = "3230c82f-abd9-4968-b928-293c20856af1"
+preview_database_id = "8cba1677-c4b5-443e-8553-f3bd73e4dbdb"
+
+[[r2_buckets]]
+binding = "CONTRACTS"
+bucket_name = "wquicks-contracts"
+preview_bucket_name = "wquicks-contracts-preview"

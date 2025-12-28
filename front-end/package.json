@@ -13,11 +13,15 @@
     "deploy:prod": "npm run build && wrangler pages deploy dist --project-name prod-wquicks-frontend"
   },
   "dependencies": {
+    "jspdf": "^3.0.4",
     "lucide-react": "^0.561.0",
+    "luxon": "^3.7.2",
     "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "react-dom": "^19.2.3",
+    "react-router-dom": "^7.11.0"
   },
   "devDependencies": {
+    "@types/luxon": "^3.7.1",
     "@types/node": "^22.14.0",
     "@vitejs/plugin-react": "^5.0.0",
     "typescript": "~5.8.2",

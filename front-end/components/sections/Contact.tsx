@@ -12,6 +12,7 @@ interface ContactProps {
 
 export const Contact: React.FC<ContactProps> = ({ theme }) => {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
+  const [submittedName, setSubmittedName] = useState('');
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [phone, setPhone] = useState('');
   const form = useRef<HTMLFormElement>(null);
@@ -112,6 +113,7 @@ export const Contact: React.FC<ContactProps> = ({ theme }) => {
         throw new Error('Network response was not ok');
       }
 
+      setSubmittedName(name);
       setStatus('success');
       form.current?.reset();
       setErrors({});
@@ -126,6 +128,7 @@ export const Contact: React.FC<ContactProps> = ({ theme }) => {
     setStatus('idle');
     setErrors({});
     setPhone('');
+    setSubmittedName('');
   };
 
   const isDark = theme === 'dark';
@@ -147,12 +150,12 @@ export const Contact: React.FC<ContactProps> = ({ theme }) => {
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
           {/* Contact Information */}
-          <div className="space-y-8">
-            <ScrollReveal delay={100} direction="left">
-              <div className={`p-8 rounded-2xl ${isDark ? 'bg-gray-900 border border-gray-700' : 'bg-white shadow-lg'}`}>
-                <h3 className={`text-2xl font-bold mb-6 ${isDark ? 'text-white' : 'text-gray-900'}`}>
+          <div className="space-y-8 flex flex-col">
+            <ScrollReveal className="flex-1" delay={100} direction="left">
+              <div className={`p-8 rounded-2xl h-full flex flex-col justify-center ${isDark ? 'bg-gray-900 border border-gray-700' : 'bg-white shadow-lg'}`}>
+                <h3 className={`text-2xl font-bold mb-8 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                   {STRINGS.contact.infoBoxTitle}
                 </h3>
 
@@ -224,7 +227,7 @@ export const Contact: React.FC<ContactProps> = ({ theme }) => {
                       <CheckCircle className="h-6 w-6 text-green-600" />
                     </div>
                     <h3 className={`text-2xl font-bold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                      {STRINGS.contact.success.title}
+                      {STRINGS.contact.success.title.replace('{name}', submittedName)}
                     </h3>
                     <p className={`mb-8 ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>
                       {STRINGS.contact.success.message}

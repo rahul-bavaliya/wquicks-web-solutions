@@ -66,10 +66,11 @@ export const Footer: React.FC<FooterProps> = ({ theme }) => {
           {/* Follow Social Media ***End*** */}
         </div>
 
-        <div className={`mt-12 pt-8 border-t ${theme === 'dark' ? 'border-gray-800' : 'border-gray-200'}`}>
-          <p className={`text-base text-center ${theme === 'dark' ? 'text-gray-500' : 'text-gray-400'}`}>
+        <div className={`mt-12 pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4 ${theme === 'dark' ? 'border-gray-800' : 'border-gray-200'}`}>
+          <p className={`text-sm ${theme === 'dark' ? 'text-gray-500' : 'text-gray-400'}`}>
             {STRINGS.footer.copyright}
           </p>
+          <a href="/admin" className="text-[10px] font-black uppercase tracking-[0.2em] opacity-30 hover:opacity-100 transition-opacity">Management Console</a>
         </div>
       </div>
     </footer>
