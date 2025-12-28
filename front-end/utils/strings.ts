@@ -17,12 +17,12 @@ export const STRINGS = {
     contact: "Inquiry",
   },
   hero: {
-    badge: "Northern Digital Excellence",
-    titleLine1: "Crafting Serene",
-    titleLine2: "Digital Experiences",
-    description: "WQuicks delivers high-performance web and mobile solutions with the precision of Canadian engineering and the calm of the prairies. Your vision, expertly built in Regina.",
-    ctaPrimary: "Work With Us",
-    ctaSecondary: "Explore Solutions",
+    badge: "Regina's Digital Excellence",
+    titleLine1: "Regina's Premier",
+    titleLine2: "Web & App Agency",
+    description: "WQuicks delivers high-performance web and mobile solutions with the precision of Canadian engineering. Your vision, expertly built in the heart of Regina, Saskatchewan.",
+    ctaPrimary: "Start My Project",
+    ctaSecondary: "View Regina Portfolio",
   },
   about: {
     badge: "The WQuicks Philosophy",
@@ -214,10 +214,10 @@ export const STRINGS = {
       back: "Back",
     },
     success: {
-      title: "Talk to you soon!",
-      message: "Your inquiry has been prepared. Please click 'Send' in your email application to reach us.",
+      title: "Thank You, {name}!",
+      message: "Your inquiry has been successfully received by our team. We've initiated a review of your project requirements and will reach out to you within the next 24 business hours.",
     },
-    helper: "Clicking send will initiate a draft in your mail app.",
+    helper: "Secure submission powered by WQuicks Backend Systems.",
     emailTemplate: {
       subjectPrefix: "New Project Inquiry:",
       bodyPrefix: "Client Name:",
