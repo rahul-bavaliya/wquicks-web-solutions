@@ -220,9 +220,6 @@ export const Contact: React.FC<ContactProps> = ({ theme }) => {
                 }`}>
                 {status === 'success' ? (
                   <div className="text-center animate-fade-in-up">
-                    <div className="mx-auto mb-8 flex justify-center">
-                      <Logo theme={theme} className="h-20 w-20" />
-                    </div>
                     <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-6">
                       <CheckCircle className="h-6 w-6 text-green-600" />
                     </div>
