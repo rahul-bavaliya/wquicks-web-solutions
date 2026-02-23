@@ -7,7 +7,7 @@ export const STRINGS = {
     location: "Regina, SK, Canada",
     phoneDisplay: "+1 (306) 990-2404",
     phoneValue: "+13069902404",
-    email: "contact@wquicks.com",
+    email: "wquicksolution@gmail.com",
   },
   nav: {
     about: "Our Story",

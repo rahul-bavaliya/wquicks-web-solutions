@@ -70,7 +70,7 @@ function App() {
                 <Services theme={theme} />
                 <Process theme={theme} />
                 <Portfolio theme={theme} />
-                <Testimonials theme={theme} />
+                {/* <Testimonials theme={theme} /> */}
                 <FAQ theme={theme} />
                 <Contact theme={theme} />
               </main>
