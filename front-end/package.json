@@ -13,7 +13,7 @@
     "deploy:prod": "npm run build && wrangler pages deploy dist --project-name prod-wquicks-frontend"
   },
   "dependencies": {
-    "jspdf": "^3.0.4",
+    "jspdf": "^4.2.0",
     "lucide-react": "^0.561.0",
     "luxon": "^3.7.2",
     "react": "^19.2.3",
