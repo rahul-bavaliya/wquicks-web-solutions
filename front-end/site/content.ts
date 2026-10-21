@@ -9,8 +9,8 @@ export const company = {
   name: 'WQuicks',
   legalName: 'WQuicks Web Solutions',
   email: 'wquicksolution@gmail.com',
-  phone: '(306) 990-2404',
-  phoneHref: 'tel:+13069902404',
+  phone: '(437) 449-2404',
+  phoneHref: 'tel:+14374492404',
   area: 'Regina, Saskatchewan',
   hours: 'Monday to Friday, 9am to 6pm',
   social: [
