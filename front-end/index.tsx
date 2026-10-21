@@ -9,10 +9,21 @@ const Router = import.meta.env.VITE_HASH_ROUTER ? HashRouter : BrowserRouter
 const rootElement = document.getElementById('root')
 if (!rootElement) throw new Error('Could not find root element to mount to')
 
-ReactDOM.createRoot(rootElement).render(
+const app = (
   <React.StrictMode>
     <Router>
       <App />
     </Router>
   </React.StrictMode>
 )
+
+// Pages are pre-rendered at build time. If this HTML was rendered for the
+// current address, attach to it; otherwise (e.g. /admin) render fresh.
+const ssrPath = rootElement.dataset.ssrPath
+const here = window.location.pathname.replace(/\/+$/, '') || '/'
+if (ssrPath && ssrPath === here && !import.meta.env.VITE_HASH_ROUTER) {
+  ReactDOM.hydrateRoot(rootElement, app)
+} else {
+  rootElement.innerHTML = ''
+  ReactDOM.createRoot(rootElement).render(app)
+}

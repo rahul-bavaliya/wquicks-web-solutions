@@ -1,4 +1,18 @@
+# Search engines and AI search tools are welcome on every public page.
 User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+
+# AI search and answer crawlers, listed explicitly so it's clear they're allowed.
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
 Allow: /
 Disallow: /admin
 Disallow: /api/
