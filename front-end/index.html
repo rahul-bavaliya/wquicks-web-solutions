@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="en-CA" class="scroll-smooth">
+<html lang="en-CA">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <meta name="theme-color" content="#15204A" />
 
   <!-- SEO Optimization: Primary Meta Tags -->
-  <title>WQuicks Web Solutions | #1 Web Development in Regina, SK</title>
-  <meta name="title" content="WQuicks Web Solutions | Regina's Top Web & Mobile App Agency">
+  <title>WQuicks | Web, media and marketing in Regina, SK</title>
+  <meta name="title" content="WQuicks | Web, media and marketing in Regina, SK">
   <meta name="description"
-    content="Elite web development and mobile app agency in Regina, Saskatchewan. We specialize in custom React websites, ecommerce, and high-performance software for Canadian businesses. Get your free consultation today." />
+    content="WQuicks is a Regina studio for websites, photo and video, and local marketing. Web design, apps, SEO, Google Ads and social media for Saskatchewan businesses. Book a free call." />
   <meta name="keywords"
-    content="Web Development Regina, Web Design Regina, Mobile App Development Regina, Software Engineering Saskatchewan, Custom Website Design, Ecommerce Solutions Regina, React Developers Canada, WQuicks" />
+    content="Web Design Regina, Web Development Regina, Marketing Agency Regina, SEO Regina, Video Production Regina, Social Media Marketing Saskatchewan, Google Ads Regina, WQuicks" />
   <meta name="author" content="WQuicks Web Solutions" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="https://wquicks.com/" />
@@ -26,9 +30,9 @@
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://wquicks.com/" />
-  <meta property="og:title" content="WQuicks: Engineering Digital Excellence from the Prairies" />
+  <meta property="og:title" content="WQuicks | Web, media and marketing in Regina" />
   <meta property="og:description"
-    content="Regina's leading digital agency for custom web and mobile software. High-performance solutions with Canadian reliability." />
+    content="Websites, photo and video, and local marketing for Saskatchewan businesses." />
   <meta property="og:image" content="https://wquicks.com/og-image.png" />
   <meta property="og:locale" content="en_CA" />
   <meta property="og:site_name" content="WQuicks Web Solutions" />
@@ -36,49 +40,21 @@
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://wquicks.com/" />
-  <meta property="twitter:title" content="WQuicks | Web Design & App Development Regina" />
+  <meta property="twitter:title" content="WQuicks | Web, media and marketing in Regina" />
   <meta property="twitter:description"
-    content="Custom software engineering and digital transformation for Regina businesses. Built with prairie pride." />
+    content="Websites, photo and video, and local marketing for Saskatchewan businesses." />
   <meta property="twitter:image" content="https://wquicks.com/og-image.png" />
 
   <!-- JSON-LD Structured Data: Local Business & Agency -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "WQuicks Web Solutions",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web, iOS, Android",
-      "url": "https://wquicks.com",
-      "logo": "https://wquicks.com/logo.png",
-      "description": "A premier Canadian software engineering agency based in Regina, SK, specialized in building high-performance websites and mobile applications.",
-      "author": {
-        "@type": "Organization",
-        "name": "WQuicks Web Solutions",
-        "url": "https://wquicks.com"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5",
-        "reviewCount": "24"
-      },
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "CAD",
-        "description": "Free Initial Project Consultation"
-      }
-    }
-    </script>
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "ProfessionalService",
       "name": "WQuicks Web Solutions",
       "image": "https://wquicks.com/og-image.png",
       "url": "https://wquicks.com",
       "telephone": "+13069902404",
-      "email": "contact@wquicks.com",
+      "email": "wquicksolution@gmail.com",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Regina Core",
@@ -114,62 +90,6 @@
       }
     }
     </script>
-
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              primary: 'var(--brand-primary)',
-              secondary: 'var(--brand-secondary)',
-            }
-          },
-          animation: {
-            blob: "blob 7s infinite",
-            float: "float 6s ease-in-out infinite",
-            'float-delayed': "float 6s ease-in-out 3s infinite",
-            'spin-slow': "spin 15s linear infinite",
-            'wiggle': "wiggle 3s ease-in-out infinite",
-            'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-          },
-          keyframes: {
-            blob: {
-              "0%": { transform: "translate(0px, 0px) scale(1)" },
-              "33%": { transform: "translate(30px, -50px) scale(1.1)" },
-              "66%": { transform: "translate(-20px, 20px) scale(0.9)" },
-              "100%": { transform: "translate(0px, 0px) scale(1)" },
-            },
-            float: {
-              "0%, 100%": { transform: "translateY(0)" },
-              "50%": { transform: "translateY(-20px)" },
-            },
-            wiggle: {
-              "0%, 100%": { transform: "rotate(-3deg)" },
-              "50%": { transform: "rotate(3deg)" },
-            },
-            fadeInUp: {
-              '0%': { opacity: '0', transform: 'translateY(20px)' },
-              '100%': { opacity: '1', transform: 'translateY(0)' },
-            }
-          },
-        }
-      }
-    }
-  </script>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
-  }
-}
-</script>
-  <link rel="stylesheet" href="/index.css">
 </head>
 
 <body>
