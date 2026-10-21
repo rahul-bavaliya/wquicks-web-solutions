@@ -6,17 +6,31 @@ import admin from './admin'
 
 const app = new Hono<{ Bindings: { ALLOWED_ORIGIN: string; DB: D1Database } }>()
 
-app.use('/*', async (c, next) => {
-    const originHeader = c.req.header('Origin');
-    const allowedOrigins = [c.env.ALLOWED_ORIGIN, 'http://127.0.0.1:3000'];
+app.use('*', async (c, next) => {
+    const origin = c.req.header('Origin');
+    const allowedOrigins = [
+        c.env.ALLOWED_ORIGIN,
+        'http://localhost:3000',
+        'http://127.0.0.1:3000',
+        'https://uat.wquicks.com',
+        'https://wquicks.com'
+    ].filter(Boolean);
+
+    const originToAllow = (origin && allowedOrigins.includes(origin))
+        ? origin
+        : c.env.ALLOWED_ORIGIN;
+
+    console.log(`[CORS] Prod Request Origin: ${origin} | Allowed: ${originToAllow}`);
+
     const corsMiddleware = cors({
-        origin: (originHeader && allowedOrigins.includes(originHeader)) ? originHeader : c.env.ALLOWED_ORIGIN,
+        origin: originToAllow,
         allowMethods: ['POST', 'GET', 'PUT', 'DELETE', 'OPTIONS'],
         allowHeaders: ['Content-Type', 'X-Admin-Password'],
         maxAge: 600,
-    })
-    return corsMiddleware(c, next)
-})
+        credentials: true,
+    });
+    return corsMiddleware(c, next);
+});
 
 app.route('/api/contact', contact)
 app.route('/api/admin', admin)
