@@ -28,12 +28,19 @@ export default function About() {
 
       <section className="section section--paper2">
         <div className="wrap split">
-          <h2 className="h2">Built by engineers, shaped by small business</h2>
+          <h2 className="h2">Built by an engineer, shaped by small business</h2>
           <div className="prose">
+            {/* TODO: add the founder's name and photo here. */}
             <p>
-              Our team brings years of enterprise software engineering to projects sized for local
-              businesses. That means fast, secure sites that keep working long after launch, and
-              the same care whether the budget is a five-page site or a custom app.
+              WQuicks is run by a Regina-based software engineer with more than six years of
+              experience building enterprise software, web apps and AI tools. That experience now
+              goes into projects sized for local businesses: fast, secure sites that keep working
+              long after launch.
+            </p>
+            <p>
+              We are a small studio on purpose. You deal with the person building your site, not
+              an account manager, and you get the same care whether it is a five-page site or a
+              custom app.
             </p>
             <p>
               We work from Regina and meet clients in person across the city. Call us at{' '}

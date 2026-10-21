@@ -56,8 +56,13 @@ export function ContactForm({ initialService }: { initialService?: string }) {
       const res = await fetch(API_ENDPOINTS.CONTACT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, phone, message: fullMessage }),
+        body: JSON.stringify({ name, email, phone, message: fullMessage, website_url: String(data.get('website_url') ?? '') }),
       })
+      if (res.status === 429) {
+        setStatus('idle')
+        setErrors({ form: `We already have your message and will reply soon. Need us sooner? Call ${company.phone}.` })
+        return
+      }
       if (!res.ok) throw new Error(String(res.status))
       setSentTo(name.split(' ')[0])
       setStatus('sent')
@@ -142,6 +147,12 @@ export function ContactForm({ initialService }: { initialService?: string }) {
           {...field('message')}
         />
         {errors.message && <p id="message-error" className="form-error">{errors.message}</p>}
+      </div>
+
+      {/* Hidden from people; spam bots fill it in and get ignored. */}
+      <div className="hp" aria-hidden="true">
+        <label htmlFor="website_url">Leave this empty</label>
+        <input id="website_url" name="website_url" tabIndex={-1} autoComplete="off" />
       </div>
 
       {errors.form && <p className="form-error form-error--block" role="alert">{errors.form}</p>}

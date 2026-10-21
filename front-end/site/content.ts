@@ -70,6 +70,7 @@ export const services: Service[] = [
       'Social media management',
       'Email campaigns',
       'Landing pages for campaigns',
+      'AI search visibility (ChatGPT, Google AI, Perplexity)',
       'Analytics and lead tracking',
     ],
   },
@@ -111,47 +112,40 @@ export type Project = {
   summary: string
   tags: Service['id'][]
   tone: 'sky' | 'canola' | 'field' | 'dusk'
-  sample: boolean
+  badge: string // small label on the cover, e.g. "Our own build"
+  href?: string
 }
 
-// TODO: replace with real client projects (with their permission).
-// While `sample` is true the card shows a small "Sample" tag on the site.
+// Things WQuicks has built. Add client projects here as they launch
+// (with the client's permission), newest first.
 export const projects: Project[] = [
   {
-    title: 'Prairie contractor',
-    kind: 'Website and local SEO',
+    title: 'wquicks.com',
+    kind: 'Website, lead system and admin tools',
     summary:
-      'A five-page site built around a quote form, with service-area pages for Regina, Moose Jaw and White City.',
+      'This site: a custom React build with pages pre-rendered so Google and AI search can read them, a contact system that stores every lead, and an admin dashboard that generates client contracts.',
     tags: ['web', 'marketing'],
     tone: 'sky',
-    sample: true,
+    badge: 'Our own build',
+    href: '/',
   },
   {
-    title: 'Downtown café',
-    kind: 'Photo, video and social',
+    title: 'Work order management system',
+    kind: 'Web and mobile app for service businesses',
     summary:
-      'A menu photo shoot and a month of short videos, scheduled across Instagram and Facebook.',
-    tags: ['media', 'marketing'],
-    tone: 'canola',
-    sample: true,
-  },
-  {
-    title: 'Equipment dealer',
-    kind: 'Online inventory and Google Ads',
-    summary:
-      'A searchable inventory that updates from a spreadsheet, plus an ad campaign for each product line.',
-    tags: ['web', 'marketing'],
+      'Tracks jobs from request to invoice for service teams in any industry, with a web dashboard, a mobile app for technicians, company sign-in and AI help built in.',
+    tags: ['web'],
     tone: 'field',
-    sample: true,
+    badge: 'Product we built',
   },
   {
-    title: 'Physio clinic',
-    kind: 'Brand refresh and booking site',
+    title: 'Auto shop CRM',
+    kind: 'Customer and job management for repair shops',
     summary:
-      'A new logo, team photos and a site that sends patients straight into online booking.',
-    tags: ['media', 'web'],
+      'Scans a vehicle VIN to start a job card, follows each job through the shop, sends invoices with online payment and suggests likely causes for common problems.',
+    tags: ['web'],
     tone: 'dusk',
-    sample: true,
+    badge: 'Product we built',
   },
 ]
 
@@ -181,7 +175,7 @@ export const faqs = [
   },
   {
     q: 'How much does a website cost?',
-    a: 'It depends on the pages and features you need. After a short call we send a fixed price in writing, so you know the full cost up front.',
+    a: 'Small business websites start at $1,200 and most land between $1,200 and $2,800. After a free call we send a fixed price in writing, so you know the full cost before we start. See the pricing page for details.',
   },
   {
     q: 'Can I update the site myself?',
@@ -200,3 +194,168 @@ export const faqs = [
     a: 'Yes. We can speed up, secure and redesign an existing site, or move it to new hosting without losing your search rankings.',
   },
 ]
+
+// ── Pricing ─────────────────────────────────────────────────
+// Prices in Canadian dollars, before tax. Adjust freely.
+export type Plan = {
+  name: string
+  price: string
+  unit?: string
+  for: string
+  items: string[]
+  featured?: boolean
+}
+
+export const websitePlans: Plan[] = [
+  {
+    name: 'Starter site',
+    price: '$1,200',
+    for: 'New businesses and trades who need a professional site, fast.',
+    items: [
+      'Up to 5 pages, written with you',
+      'Works on phones, tablets and computers',
+      'Contact or quote form sent to your inbox',
+      'Google Business Profile set up or cleaned up',
+      'Search and AI-ready setup',
+      'Live in about 3 weeks',
+    ],
+  },
+  {
+    name: 'Business site',
+    price: '$2,800',
+    for: 'Established businesses that want to be found for every service they offer.',
+    items: [
+      'Up to 12 pages with custom design',
+      'A page for each service and area you cover',
+      'Guides or blog you can update yourself',
+      'Structured data so Google and AI tools understand you',
+      'Visitor and lead tracking',
+      'Live in about 4 to 6 weeks',
+    ],
+    featured: true,
+  },
+  {
+    name: 'Store or custom app',
+    price: '$5,500',
+    for: 'Selling online, taking bookings, or running part of your business on the web.',
+    items: [
+      'Online store, booking system or customer portal',
+      'Payments, inventory or scheduling built in',
+      'Connects to the tools you already use',
+      'Admin screens your team can run',
+      'Written scope and timeline before we start',
+    ],
+  },
+]
+
+export const carePlans: Plan[] = [
+  {
+    name: 'Essentials',
+    price: '$49',
+    unit: '/month',
+    for: 'Keep the site fast, safe and online.',
+    items: ['Hosting and security certificate', 'Daily backups', 'Updates and security fixes', 'Uptime monitoring'],
+  },
+  {
+    name: 'Growth',
+    price: '$149',
+    unit: '/month',
+    for: 'Keep the site fresh without lifting a finger.',
+    items: [
+      'Everything in Essentials',
+      'Up to 2 hours of changes each month',
+      'Google Business Profile posts',
+      'Monthly report in plain language',
+    ],
+    featured: true,
+  },
+  {
+    name: 'Visibility',
+    price: '$349',
+    unit: '/month',
+    for: 'Climb in local search and get named by AI tools.',
+    items: [
+      'Everything in Growth',
+      'Local SEO and listing clean-up',
+      'Monthly check of ChatGPT, Google AI and Perplexity answers',
+      'One new guide or FAQ page each month',
+    ],
+  },
+]
+
+export const extras = [
+  { name: 'AI visibility report', price: '$299', note: 'one time' },
+  { name: 'Logo and brand identity', price: 'from $750', note: '' },
+  { name: 'Photo shoot, half day', price: 'from $450', note: '' },
+  { name: 'Short-form video package', price: 'from $650', note: '' },
+  { name: 'Google or Meta ads management', price: 'from $400', note: 'per month, plus ad spend' },
+  { name: 'Social media management', price: 'from $600', note: 'per month' },
+]
+
+export const foundingOffer = {
+  title: 'Founding client offer: 30% off your website',
+  body:
+    'We are taking on our first five client websites at 30% off. In return, you let us share the project as a case study and leave an honest Google review once it is live.',
+  spotsNote: 'Limited to five businesses.',
+}
+
+export const guarantees = [
+  { name: 'Fixed, written price', body: 'The price in your proposal is the price you pay.' },
+  { name: 'Pay half to start', body: '50% to begin, 50% when you are happy and the site is live.' },
+  { name: 'First design redo free', body: 'Not right for you? We redesign it at no charge.' },
+  { name: 'No long contracts', body: 'Care plans and marketing are month to month. Cancel anytime.' },
+]
+
+export const websiteCheckIncludes = [
+  'How your site looks and works on a phone',
+  'Speed, security and broken links',
+  'Whether Google can find and read every page',
+  'Whether ChatGPT, Google AI and Perplexity mention you',
+  'Your Google Business Profile and listings',
+  'The top 5 fixes, in plain language',
+]
+
+// ── Page titles and descriptions for search engines and link previews ──
+export const seo: Record<string, { title: string; description: string }> = {
+  '/': {
+    title: 'WQuicks | Web, media and marketing in Regina, SK',
+    description:
+      'Regina studio for websites, photo and video, local SEO and AI search visibility. Websites from $1,200. Book a free call or get a free website check.',
+  },
+  '/services': {
+    title: 'Services | Web design, media and marketing in Regina | WQuicks',
+    description:
+      'Websites and apps, photo and video, local SEO, ads and AI search visibility for Saskatchewan businesses.',
+  },
+  '/pricing': {
+    title: 'Pricing | Websites from $1,200 in Regina | WQuicks',
+    description:
+      'Clear prices for websites, care plans and marketing in Regina, SK. Fixed written quotes, 50% to start, no long contracts.',
+  },
+  '/work': {
+    title: "What we've built | WQuicks, Regina SK",
+    description: 'Websites, web apps and business software built by WQuicks in Regina, Saskatchewan.',
+  },
+  '/about': {
+    title: 'About WQuicks | Regina web and marketing studio',
+    description:
+      'WQuicks is a Regina studio run by a software engineer with 6+ years of experience, building websites and marketing for local businesses.',
+  },
+  '/book': {
+    title: 'Book a free 30-minute call | WQuicks, Regina SK',
+    description: 'Pick a time that suits you for a free call about your website or marketing. No obligation.',
+  },
+  '/website-check': {
+    title: 'Free website check | WQuicks, Regina SK',
+    description:
+      'Get a free check of your website: phone experience, speed, Google and AI search visibility, with the top 5 fixes in plain language.',
+  },
+  '/contact': {
+    title: 'Contact WQuicks | Regina, SK',
+    description: 'Call, email or send a message to WQuicks in Regina. We reply within one business day.',
+  },
+  '/privacy': {
+    title: 'Privacy policy | WQuicks',
+    description: 'How WQuicks collects, uses and protects the information you send us.',
+  },
+}
