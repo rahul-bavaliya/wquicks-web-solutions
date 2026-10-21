@@ -1,3 +1,9 @@
+# Secrets are NOT stored in this file. Set them once per environment with:
+#   npx wrangler secret put ADMIN_PASSWORD --env prod
+#   npx wrangler secret put RESEND_API_KEY --env prod
+# (repeat with --env uat and --env dev). For local development, copy
+# .dev.vars.example to .dev.vars and fill it in.
+
 name = "wquicks-backend"
 main = "src/index.ts"
 compatibility_date = "2024-12-18"
@@ -10,9 +16,7 @@ routes = [
 
 [env.dev.vars]
 ALLOWED_ORIGIN = "https://dev.wquicks.com"
-ADMIN_PASSWORD = "wquicks-admin-2025" 
 ADMIN_EMAIL = "rahul.bavaliya.dev@gmail.com"
-RESEND_API_KEY = "re_5MTcc7SQ_Nj4DS4CVBbmaMhyvsBTEawJ9"
 
 [[env.dev.d1_databases]]
 binding = "DB"
@@ -31,9 +35,7 @@ routes = [
 
 [env.uat.vars]
 ALLOWED_ORIGIN = "https://uat.wquicks.com"
-ADMIN_PASSWORD = "wquicks-admin-2025" 
 ADMIN_EMAIL = "rahul.bavaliya.dev@gmail.com"
-RESEND_API_KEY = "re_5MTcc7SQ_Nj4DS4CVBbmaMhyvsBTEawJ9"
 
 [[env.uat.d1_databases]]
 binding = "DB"
@@ -52,9 +54,7 @@ routes = [
 
 [env.prod.vars]
 ALLOWED_ORIGIN = "https://wquicks.com"
-ADMIN_PASSWORD = "wquicks-admin-2025" 
 ADMIN_EMAIL = "rahul.bavaliya.dev@gmail.com"
-RESEND_API_KEY = "re_5MTcc7SQ_Nj4DS4CVBbmaMhyvsBTEawJ9"
 
 [[env.prod.d1_databases]]
 binding = "DB"
@@ -70,9 +70,7 @@ port = 8787
 
 [vars]
 ALLOWED_ORIGIN = "http://localhost:3000"
-ADMIN_PASSWORD = "wquicks-admin-2025" 
 ADMIN_EMAIL = "rahul.bavaliya.dev@gmail.com"
-RESEND_API_KEY = "re_5MTcc7SQ_Nj4DS4CVBbmaMhyvsBTEawJ9"
 
 [[d1_databases]]
 binding = "DB"

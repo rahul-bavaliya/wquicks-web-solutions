@@ -32,9 +32,12 @@ export default function Services() {
                   <li key={item}>{item}</li>
                 ))}
               </ul>
-              <Link to={`/contact?service=${s.id}`} className="btn btn--line">
-                Ask about {s.name.toLowerCase()}
-              </Link>
+              <div className="service-actions">
+                <Link to={`/contact?service=${s.id}`} className="btn btn--line">
+                  Ask about {s.name.toLowerCase()}
+                </Link>
+                <Link to="/pricing" className="text-link">See prices</Link>
+              </div>
             </div>
           </div>
         </section>

@@ -4,8 +4,10 @@ import { Wordmark } from './Mark'
 
 const links = [
   { to: '/services', label: 'Services' },
+  { to: '/pricing', label: 'Pricing' },
   { to: '/work', label: 'Work' },
   { to: '/about', label: 'About' },
+  { to: '/website-check', label: 'Free website check' },
 ]
 
 export function Header() {
@@ -35,7 +37,7 @@ export function Header() {
               {l.label}
             </NavLink>
           ))}
-          <Link to="/contact" className="btn btn--sun btn--small">
+          <Link to="/book" className="btn btn--sun btn--small">
             Book a free call
           </Link>
         </nav>
