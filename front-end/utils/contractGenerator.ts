@@ -63,7 +63,7 @@ export const generateContractPDF = (inquiry: Inquiry) => {
     setStyle(7, 'white', 'normal');
     const contactX = pageWidth - margin;
     doc.text('contact@wquicks.com', contactX, 21, { align: 'right' });
-    doc.text('+1 (306) 990-2404', contactX, 28, { align: 'right' });
+    doc.text('+1 (437) 449-2404', contactX, 28, { align: 'right' });
     doc.text('Regina, SK, Canada', contactX, 35, { align: 'right' });
 
     // --- 2. DOCUMENT INFO BAR ---
