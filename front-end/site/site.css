@@ -344,3 +344,5 @@
 .legal h2 { font-family: var(--display); font-weight: 700; font-size: 1.375rem; color: var(--ink); margin: 36px 0 10px; }
 .legal h2:first-child { margin-top: 0; }
 .footer-base a { color: inherit; }
+
+.hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }

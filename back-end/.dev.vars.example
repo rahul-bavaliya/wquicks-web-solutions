@@ -1,0 +1,3 @@
+# Copy to .dev.vars for `npm run dev`. Never commit .dev.vars.
+ADMIN_PASSWORD=choose-a-long-password
+RESEND_API_KEY=re_your_key_here
