@@ -23,8 +23,11 @@ export function Footer() {
         <nav aria-label="Studio">
           <h2 className="footer-h">Studio</h2>
           <ul>
-            <li><Link to="/work">Work</Link></li>
+            <li><Link to="/pricing">Pricing</Link></li>
+            <li><Link to="/work">What we've built</Link></li>
             <li><Link to="/about">About</Link></li>
+            <li><Link to="/book">Book a free call</Link></li>
+            <li><Link to="/website-check">Free website check</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </nav>
@@ -44,6 +47,7 @@ export function Footer() {
       </div>
       <div className="wrap footer-base">
         <span>© {new Date().getFullYear()} {company.legalName}</span>
+        <span><Link to="/privacy">Privacy policy</Link></span>
         <span>Made in Regina, on Treaty 4 territory</span>
       </div>
     </footer>

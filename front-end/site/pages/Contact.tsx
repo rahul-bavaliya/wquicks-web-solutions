@@ -1,4 +1,4 @@
-import { useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { company } from '../content'
 import { PageIntro } from '../components/PageIntro'
 import { ContactForm } from '../components/ContactForm'
@@ -8,10 +8,10 @@ export default function Contact() {
 
   return (
     <>
-      <PageIntro title="Book a free call">
+      <PageIntro title="Contact us">
         <p>
-          Tell us about your business and what you want to change. We reply within one business
-          day with times for a 30-minute call.
+          Send a message about your business and what you want to change. We reply within one
+          business day. Want to talk instead? <Link to="/book">Book a free call</Link>.
         </p>
       </PageIntro>
       <section className="section">

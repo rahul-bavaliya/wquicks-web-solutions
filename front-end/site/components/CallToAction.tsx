@@ -11,7 +11,7 @@ export function CallToAction({ title = 'Tell us what you want more of.' }: { tit
           30-minute call and a written plan.
         </p>
         <div className="cta-actions">
-          <Link to="/contact" className="btn btn--sun">Book a free call</Link>
+          <Link to="/book" className="btn btn--sun">Book a free call</Link>
           <a href={company.phoneHref} className="btn btn--ghost-dark">Call {company.phone}</a>
         </div>
       </div>

@@ -1,0 +1,21 @@
+# WQuicks Web Solutions
+
+> WQuicks is a web, media and marketing studio in Regina, Saskatchewan, Canada. It builds websites and web apps, produces photo and video, and runs local SEO, ads and AI search visibility for small and medium businesses in Regina and across Saskatchewan.
+
+- Location: Regina, Saskatchewan, Canada (serves Regina, southern Saskatchewan and clients across Canada by video call)
+- Phone: (437) 449-2404
+- Email: wquicksolution@gmail.com
+- Hours: Monday to Friday, 9am to 6pm
+- Prices (CAD, before tax): websites from $1,200 (Starter), $2,800 (Business), $5,500 (online store or custom app); care plans $49, $149 or $349 per month; AI visibility report $299
+- Free offers: 30-minute call, website check with the top 5 fixes
+- Promises: fixed written price, 50% to start and 50% at launch, first design redo free, month-to-month plans
+
+## Pages
+
+- [Services](https://wquicks.com/services): websites and apps, photo and video, marketing including local SEO and AI search visibility
+- [Pricing](https://wquicks.com/pricing): website packages, care plans, media and marketing prices
+- [Free website check](https://wquicks.com/website-check): request a free review of a website and Google listing
+- [Book a free call](https://wquicks.com/book): request a free 30-minute call by phone, video or in person in Regina
+- [What we've built](https://wquicks.com/work): wquicks.com, a work order management system and an auto shop CRM
+- [About](https://wquicks.com/about): a Regina studio run by a software engineer with 6+ years of experience
+- [Contact](https://wquicks.com/contact)

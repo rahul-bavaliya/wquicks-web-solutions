@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
-import { services, process, projects, industries } from '../content'
+import { services, process, projects, industries, websiteCheckIncludes } from '../content'
 import { ProjectCard } from '../components/ProjectCard'
 import { Faq } from '../components/Faq'
 import { CallToAction } from '../components/CallToAction'
+import { FoundingOffer, Guarantees } from './Pricing'
 
 export default function Home() {
   return (
@@ -17,8 +18,8 @@ export default function Home() {
             team, one plan, built around getting you more customers.
           </p>
           <div className="hero-actions">
-            <Link to="/contact" className="btn btn--sun">Book a free call</Link>
-            <Link to="/work" className="btn btn--ghost-dark">See our work</Link>
+            <Link to="/book" className="btn btn--sun">Book a free call</Link>
+            <Link to="/website-check" className="btn btn--ghost-dark">Free website check</Link>
           </div>
         </div>
         <span className="hero-sun" aria-hidden="true" />
@@ -44,7 +45,8 @@ export default function Home() {
             </p>
             <p>
               We are based in Regina and work with owners across Saskatchewan: trades, clinics,
-              restaurants, dealers, non-profits and growing local brands.
+              restaurants, dealers, non-profits and growing local brands. Websites start at{' '}
+              <Link to="/pricing">$1,200</Link>, with a fixed written price before any work begins.
             </p>
           </div>
         </div>
@@ -68,8 +70,8 @@ export default function Home() {
       <section className="section section--paper2" aria-labelledby="work-title">
         <div className="wrap">
           <div className="section-head section-head--row">
-            <h2 id="work-title" className="h2">Recent work</h2>
-            <Link to="/work" className="text-link">All projects</Link>
+            <h2 id="work-title" className="h2">What we've built</h2>
+            <Link to="/work" className="text-link">See everything we've built</Link>
           </div>
           <div className="projects">
             {projects.slice(0, 2).map((p) => (
@@ -78,6 +80,26 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="section check-band" aria-labelledby="check-title">
+        <div className="wrap split">
+          <div>
+            <h2 id="check-title" className="h2">Is your website costing you customers?</h2>
+            <p className="prose check-lead">
+              Get a free check of your site and Google listing, including whether ChatGPT and
+              Google's AI mention you. Plain-language report in two business days.
+            </p>
+            <Link to="/website-check" className="btn btn--sky">Get my free website check</Link>
+          </div>
+          <ul className="checklist">
+            {websiteCheckIncludes.map((x) => (
+              <li key={x}>{x}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <FoundingOffer />
 
       <section className="section" aria-labelledby="process-title">
         <div className="wrap">
@@ -105,7 +127,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section section--paper2" aria-labelledby="faq-title">
+      <section className="section section--paper2" aria-labelledby="promise-title">
+        <div className="wrap split">
+          <h2 id="promise-title" className="h2">Hiring us is low risk</h2>
+          <Guarantees />
+        </div>
+      </section>
+
+      <section className="section" aria-labelledby="faq-title">
         <div className="wrap split">
           <h2 id="faq-title" className="h2">Questions owners ask us</h2>
           <Faq />
