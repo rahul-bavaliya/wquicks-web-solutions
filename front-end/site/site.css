@@ -239,9 +239,9 @@
 .form-optional { font-weight: 400; color: var(--muted); }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
 @media (max-width: 560px) { .form-grid { grid-template-columns: 1fr; } }
-.form input:not([type="checkbox"]), .form textarea { width: 100%; font: inherit; color: var(--ink); background: #fff; border: 1.5px solid #b9bdb2; border-radius: 10px; padding: 12px 14px; min-height: 48px; }
+.form input:not([type="checkbox"]):not([type="radio"]), .form textarea { width: 100%; font: inherit; color: var(--ink); background: #fff; border: 1.5px solid #b9bdb2; border-radius: 10px; padding: 12px 14px; min-height: 48px; }
 .form textarea { resize: vertical; min-height: 140px; }
-.form input:not([type="checkbox"]):focus, .form textarea:focus { outline: none; border-color: var(--sky); box-shadow: 0 0 0 3px rgba(244, 196, 48, .55); }
+.form input:not([type="checkbox"]):not([type="radio"]):focus, .form textarea:focus { outline: none; border-color: var(--sky); box-shadow: 0 0 0 3px rgba(244, 196, 48, .55); }
 .form [aria-invalid="true"] { border-color: var(--error) !important; }
 .form-error { color: var(--error); font-size: .9375rem; margin-top: 6px; }
 .form-error--block { background: #fdecea; border-radius: 10px; padding: 12px 14px; margin: 0; }
@@ -281,3 +281,66 @@
 @media (max-width: 640px) {
   .hero-actions .btn--ghost-dark { background: var(--sky); }
 }
+
+/* ── Lead forms (book a call, website check) ───────────────── */
+.lead-form { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 22px; }
+.form-row--wide { grid-column: 1 / -1; }
+.form-hint { color: var(--muted); font-size: .9375rem; margin-top: 6px; }
+.form-done a { color: var(--ink); font-weight: 600; text-decoration-color: var(--canola); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+@media (max-width: 560px) { .lead-form { grid-template-columns: 1fr; } }
+.checklist--light { grid-template-columns: 1fr; margin: 20px 0 0; }
+.checklist--light li::before { border-color: var(--canola); }
+.contact-note { margin-top: 28px; color: rgba(255,255,255,.75); }
+
+/* ── Pricing ──────────────────────────────────────────────── */
+.section-head .prose { margin-top: 10px; }
+.plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; align-items: stretch; }
+@media (max-width: 960px) { .plans { grid-template-columns: 1fr; max-width: 560px; } }
+.plan { position: relative; background: #fff; border: 1.5px solid var(--line); border-radius: 16px; padding: 28px; display: flex; flex-direction: column; }
+.plan--featured { border: 2px solid var(--sky); box-shadow: inset 0 -10px 0 var(--canola); padding-bottom: 38px; }
+.plan-flag { position: absolute; top: -14px; left: 24px; background: var(--sky); color: #fff; font-size: .8125rem; font-weight: 600; padding: 4px 12px; border-radius: 999px; }
+.plan-name { font-family: var(--display); font-weight: 700; font-size: 1.375rem; }
+.plan-price { margin-top: 10px; font-family: var(--display); font-weight: 800; font-size: clamp(2.25rem, 3.6vw, 2.75rem); letter-spacing: -0.03em; line-height: 1; }
+.plan-from, .plan-unit { font-family: var(--body); font-weight: 500; font-size: 1rem; letter-spacing: 0; color: var(--muted); }
+.plan-for { margin-top: 14px; color: var(--muted); }
+.plan .checklist { grid-template-columns: 1fr; margin: 22px 0 0; }
+
+.price-table { width: 100%; border-collapse: collapse; }
+.price-table th, .price-table td { text-align: left; padding: 16px 0; border-bottom: 1px solid var(--line); vertical-align: baseline; }
+.price-table th { font-weight: 600; padding-right: 24px; }
+.price-table td { font-family: var(--display); font-weight: 700; font-size: 1.125rem; white-space: nowrap; }
+.price-table td .text-link { font-family: var(--body); font-size: 1rem; margin-left: 12px; }
+.price-note { font-family: var(--body); font-weight: 400; font-size: .9375rem; color: var(--muted); white-space: normal; }
+@media (max-width: 560px) { .price-table tr { display: grid; } .price-table th { border-bottom: 0; padding-bottom: 2px; } .price-table td { padding-top: 0; white-space: normal; } }
+
+/* Founding client offer: a canola band, the field from the hero */
+.offer { background-color: var(--canola); background-image: repeating-linear-gradient(180deg, transparent 0 13px, rgba(21, 32, 74, .06) 13px 15px); color: var(--sky); padding: clamp(40px, 6vw, 64px) 0; }
+.offer-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 24px 48px; align-items: center; }
+.offer-title { font-family: var(--display); font-weight: 800; font-size: clamp(1.625rem, 3vw, 2.25rem); line-height: 1.08; letter-spacing: -0.02em; max-width: 24ch; }
+.offer-body { margin-top: 12px; max-width: 60ch; }
+.offer-note { margin-top: 8px; font-weight: 600; }
+@media (max-width: 760px) { .offer-inner { grid-template-columns: 1fr; } .offer .btn { justify-self: start; } }
+
+.guarantees { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.guarantee { border-top: 2px solid var(--sky); padding-top: 16px; }
+.guarantee dt { font-family: var(--display); font-weight: 700; font-size: 1.25rem; }
+.guarantee dd { margin: 8px 0 0; color: var(--muted); }
+@media (max-width: 560px) { .guarantees { grid-template-columns: 1fr; } }
+
+/* Home: free website check band */
+.check-lead { margin: 16px 0 28px; }
+.check-band .checklist { margin: 0; }
+
+/* Work: "your business, next" tile */
+.project--next { display: flex; }
+.project-next { flex: 1; border: 2px dashed var(--sky); border-radius: 16px; padding: clamp(24px, 4vw, 40px); display: flex; flex-direction: column; justify-content: center; gap: 14px; }
+.project-next p { color: var(--muted); max-width: 44ch; }
+.project-next-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 8px; }
+
+.service-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
+
+/* Privacy policy */
+.legal { max-width: 68ch; }
+.legal h2 { font-family: var(--display); font-weight: 700; font-size: 1.375rem; color: var(--ink); margin: 36px 0 10px; }
+.legal h2:first-child { margin-top: 0; }
+.footer-base a { color: inherit; }
